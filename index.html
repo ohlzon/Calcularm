@@ -6,16 +6,46 @@
   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
   <link href="css/default.css" rel="stylesheet" type="text/css" />
   <script type="text/javascript" src="js\jquery.js"></script>
+  <script type="text/javascript" src="js\xdate.js"></script>
   <script type="text/javascript" src="js\default.js"></script>
   <title>Calcularm</title>
 </head>
 <body>
 <div id="site">
 	<form>
-    <fieldset>
+    <div class="field workday_start">
+      <label for="text">Arbetsdagen börjar</label>
+      <select class="timeselect workstart" id="ws_min">
+        <option>00</option>
+        <option>05</option>
+        <option>10</option>
+        <option>15</option>
+        <option>20</option>
+        <option>25</option>
+        <option>30</option>
+        <option>35</option>
+        <option>40</option>
+        <option>45</option>
+        <option>50</option>
+        <option>55</option>
+      </select>
+      <select class="timeselect workstart" id="ws_hr">
+        <option>04</option>
+        <option>05</option>
+        <option>06</option>
+        <option>07</option>
+        <option>08</option>
+        <option>09</option>
+        <option>10</option>
+        <option>11</option>
+        <option>12</option>
+      </select>
+    </div>
+    <div class="field">
       <label for="text">Snooze</label>
-      <select id="snooze">
-        <option>5</option>
+      <select class="timeselect task" id="snooze">
+        <option>00</option>
+        <option>05</option>
         <option>10</option>
         <option>15</option>
         <option>20</option>
@@ -32,11 +62,12 @@
         <option>90</option>
         <option>120</option>
       </select>
-    </fieldset>
-    <fieldset>
+    </div>
+    <div class="field">
       <label for="text">Dusch</label>
-      <select id="dusch">
-        <option>5</option>
+      <select class="timeselect task" id="dusch">
+        <option>00</option>
+        <option>05</option>
         <option>10</option>
         <option>15</option>
         <option>20</option>
@@ -53,11 +84,12 @@
         <option>90</option>
         <option>120</option>
       </select>
-    </fieldset>
-    <fieldset>
+    </div>
+    <div class="field">
       <label for="text">Frukost</label>
-      <select id="frukost">
-        <option>5</option>
+      <select class="timeselect task" id="frukost">
+        <option>00</option>
+        <option>05</option>
         <option>10</option>
         <option>15</option>
         <option>20</option>
@@ -74,11 +106,12 @@
         <option>90</option>
         <option>120</option>
       </select>
-    </fieldset>
-    <fieldset>
+    </div>
+    <div class="field">
       <label for="text">Barn</label>
-      <select id="barn">
-        <option>5</option>
+      <select class="timeselect task" id="barn">
+        <option>00</option>
+        <option>05</option>
         <option>10</option>
         <option>15</option>
         <option>20</option>
@@ -95,11 +128,12 @@
         <option>90</option>
         <option>120</option>
       </select>
-    </fieldset>
-    <fieldset>
+    </div>
+    <div class="field">
       <label for="text">Restid</label>
-      <select id="restid">
-        <option>5</option>
+      <select class="timeselect task" id="restid">
+        <option>00</option>
+        <option>05</option>
         <option>10</option>
         <option>15</option>
         <option>20</option>
@@ -116,11 +150,12 @@
         <option>90</option>
         <option>120</option>
       </select>
-    </fieldset>
-        <fieldset>
+    </div>  
+    <div class="field">
       <label for="text">Övrigt</label>
-      <select id="other">
-        <option>5</option>
+      <select class="timeselect task" id="other">
+        <option>00</option>
+        <option>05</option>
         <option>10</option>
         <option>15</option>
         <option>20</option>
@@ -137,12 +172,10 @@
         <option>90</option>
         <option>120</option>
       </select>
-    </fieldset>
+    </div>  
   </form>
-  <a href="#" id="calculate">Calculate</a>
-  <div id="result">
-    0
-  </div>
+  
+  <p class="alarmtime">Ditt larm bör gå första gången klockan <span id="result"></span></p>
 </div>
 
 </body>
